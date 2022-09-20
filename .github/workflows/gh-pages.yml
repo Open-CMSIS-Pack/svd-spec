@@ -1,0 +1,128 @@
+name: Build documentation
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/gh-pages.yml'
+      - '.github/doxygen.json'
+      - '.github/linkchecker.json'
+      - 'doc/**'
+      - 'doxygen/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/gh-pages.yml'
+      - '.github/doxygen.json'
+      - '.github/linkchecker.json'
+      - 'doc/**'
+      - 'doxygen/**'
+  release:
+    types: [published]
+
+jobs:
+  pack:
+    if: |
+      github.event_name != 'release' ||
+      (github.event_name == 'release' && startsWith(github.ref, 'refs/tags/pack/'))
+    name: Generate pack
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Fetch tags
+        if: github.event_name == 'release'
+        run: |
+          git fetch --tags --force
+
+      - name: Install packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y libclang1-9 libclang-cpp1-9 p7zip libxml2-utils
+          sudo pip install LinkChecker
+
+      - name: Install doxygen 1.9.2
+        run: |
+          wget https://doxygen.nl/files/doxygen-1.9.2.linux.bin.tar.gz
+          sudo tar -C /opt -xf doxygen-1.9.2.linux.bin.tar.gz
+          sudo ln -s /opt/doxygen-1.9.2/bin/doxygen /usr/local/bin/
+          which doxygen
+          doxygen --version
+
+      - name: Generate doxygen
+        run: |
+          echo "::add-matcher::.github/doxygen.json"
+          ./gen_doc.sh
+          echo "::remove-matcher owner=doxygen::"
+        working-directory: ./doxygen
+
+      - name: Run linkchecker
+        run: |
+          echo "::add-matcher::.github/linkchecker.json"
+          ../doxygen/check_links.sh ./html/index.html ../doxygen
+          echo "::remove-matcher owner=linkchecker::"
+        working-directory: ./doc
+
+      - name: Archive documentation
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v2
+        with:
+          name: doc
+          path: doc/html/
+          retention-days: 1
+          if-no-files-found: error
+
+      - name: Archive documentation
+        if: ${{ github.event_name == 'release' || github.event_name == 'push' || github.event_name == 'workflow_dispatch' }}
+        run: |
+          cd doc/html
+          tar -cvjf /tmp/doc.tbz2 .
+
+      - name: Update release description
+        if: github.event_name == 'release'
+        run: |
+          CURRENT="$(gh release view ${{ github.ref }} --json body -t "{{.body}}")"
+          if [[ -z "$CURRENT" ]]; then
+            DESC=$(git tag -l -n99 --format "%(contents)" ${{ github.ref }})
+            gh release edit -n "$DESC"
+          fi
+
+      - uses: actions/checkout@v2
+        if: github.event_name == 'release' || github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        with:
+          ref: gh-pages
+
+      - name: Publish documentation
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        run: |
+          rm -rf main
+          mkdir main
+          pushd main
+          tar -xvjf /tmp/doc.tbz2
+          popd
+          ./update_versions.sh
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "Update main documentation"
+          git push
+
+      - name: Publish documentation
+        if: github.event_name == 'release'
+        run: |
+          RELEASE=$(echo $GITHUB_REF | sed 's/refs\/tags\///')
+          rm -rf ${RELEASE}
+          mkdir -p ${RELEASE}
+          rm -f latest
+          ln -s ${RELEASE} latest
+          pushd ${RELEASE}
+          tar -xvjf /tmp/doc.tbz2
+          popd
+          ./update_versions.sh
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "Update documentation for release ${RELEASE}"
+          git push
