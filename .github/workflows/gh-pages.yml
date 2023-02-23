@@ -22,10 +22,7 @@ on:
 
 jobs:
   pack:
-    if: |
-      github.event_name != 'release' ||
-      (github.event_name == 'release' && startsWith(github.ref, 'refs/tags/pack/'))
-    name: Generate pack
+    name: Generate documentation
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
@@ -45,8 +42,8 @@ jobs:
 
       - name: Install doxygen 1.9.2
         run: |
-          wget https://doxygen.nl/files/doxygen-1.9.2.linux.bin.tar.gz
-          sudo tar -C /opt -xf doxygen-1.9.2.linux.bin.tar.gz
+          wget -O doxygen.tgz https://sourceforge.net/projects/doxygen/files/rel-1.9.2/doxygen-1.9.2.linux.bin.tar.gz/download
+          sudo tar -C /opt -xf doxygen.tgz
           sudo ln -s /opt/doxygen-1.9.2/bin/doxygen /usr/local/bin/
           which doxygen
           doxygen --version
@@ -89,7 +86,7 @@ jobs:
             gh release edit -n "$DESC"
           fi
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         if: github.event_name == 'release' || github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         with:
           ref: gh-pages
