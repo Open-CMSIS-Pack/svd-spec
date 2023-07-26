@@ -2,7 +2,7 @@
 
 ## Access to Specification
 
-The specification is pre-build and can be accessed here: [https://open-cmsis-pack.github.io/svd-spec/main/html/index.html](https://open-cmsis-pack.github.io/svd-spec/main/html/index.html)
+The specification is pre-build and can be accessed here: [https://open-cmsis-pack.github.io/svd-spec/main/index.html](https://open-cmsis-pack.github.io/svd-spec/main/index.html).
 
 ## License
 
