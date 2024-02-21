@@ -1824,7 +1824,7 @@ A field may define an \em enumeratedValue in order to make the display more intu
         <td>1..1</td>
     </tr>
     <tr  class="choice">
-        <td colspan="4"><em>1. bitRangeOffsetWidthStyle</em></td>
+        <td colspan="4"><em>2. bitRangeOffsetWidthStyle</em></td>
     </tr>
     <tr  class="choice">
         <td align="right">bitOffset</td>
