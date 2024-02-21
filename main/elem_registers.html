@@ -500,21 +500,21 @@ Debuggers are not expected to read this register location unless explicitly inst
 <tr class="choice">
 <td><em>Choice of</em> </td><td colspan="2">Three mutually exclusive options exist to describe the bit-range: </td><td>1..1  </td></tr>
 <tr class="choice">
-<td colspan="4"><em>1. bitRangeLsbMsbStyle</em>   </td></tr>
+<td colspan="4"><em>1. bitRangeOffsetWidthStyle</em>  </td></tr>
 <tr class="choice">
 <td align="right">bitOffset </td><td>Value defining the position of the least significant bit of the field within the register. </td><td>scaledNonNegativeInteger </td><td>1..1   </td></tr>
 <tr class="choice">
-<td align="right">bitWidth  </td><td>Value defining the bit-width of the bitfield within the register.  </td><td>scaledNonNegativeInteger </td><td>0..1   </td></tr>
+<td align="right">bitWidth  </td><td>Value defining the bit-width of the bitfield within the register.  </td><td>scaledNonNegativeInteger </td><td>1..1   </td></tr>
 <tr class="choice">
-<td colspan="4"><em>2. bitRangeOffsetWidthStyle</em>  </td></tr>
+<td colspan="4"><em>2. bitRangeLsbMsbStyle</em>   </td></tr>
 <tr class="choice">
 <td align="right">lsb  </td><td>Value defining the bit position of the least significant bit within the register. </td><td>scaledNonNegativeInteger </td><td>1..1   </td></tr>
 <tr class="choice">
-<td align="right">msb  </td><td>Value defining the bit position of the most significant bit within the register.  </td><td>scaledNonNegativeInteger </td><td>1..1  </td></tr>
+<td align="right">msb  </td><td>Value defining the bit position of the most significant bit within the register.  </td><td>scaledNonNegativeInteger </td><td>1..1   </td></tr>
 <tr class="choice">
 <td colspan="4"><em>3. bitRangePattern</em>  </td></tr>
 <tr class="choice">
-<td align="right">bitRange  </td><td>A string in the format: "[&lt;msb&gt;:&lt;lsb&gt;]" </td><td>bitRangeType  </td><td>0..1   </td></tr>
+<td align="right">bitRange  </td><td>A string in the format: "[&lt;msb&gt;:&lt;lsb&gt;]" </td><td>bitRangeType  </td><td>1..1   </td></tr>
 <tr>
 <td><a class="el" href="elem_special.html#elem_access">access</a> </td><td>Predefined strings set the access type. The element can be omitted if access rights get inherited from parent elements. </td><td>accessType </td><td>0..1   </td></tr>
 <tr>
