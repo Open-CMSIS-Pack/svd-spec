@@ -1,6 +1,6 @@
 //--- list of versions ---
 const versions = {
-    "main": "1.3.10-dev1",
+    "main": "1.3.10-dev6",
     "latest": "1.3.9"
 }
 //--- list of versions ---

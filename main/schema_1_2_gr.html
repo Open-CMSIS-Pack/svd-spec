@@ -133,8 +133,11 @@ $(document).ready(function(){initNavTree('schema_1_2_gr.html',''); initResizable
   See the License for the specific language governing permissions and
   limitations under the License.
 
-  $Date:         21. April 2022
-  $Revision:     1.3.9
+  $Date:         20. February 2024
+  $Revision:     1.3.10
+
+  Version 1.3.10:
+  - add CM52 as enumerated value for cpuNameType.
 
   Version 1.3.9:
   - add CM85 as enumerated value for cpuNameType.
@@ -218,6 +221,7 @@ $(document).ready(function(){initNavTree('schema_1_2_gr.html',''); initResizable
       &lt;xs:enumeration value="CM23"/&gt;
       &lt;xs:enumeration value="CM33"/&gt;
       &lt;xs:enumeration value="CM35P"/&gt;
+      &lt;xs:enumeration value="CM52"/&gt;
       &lt;xs:enumeration value="CM55"/&gt;
       &lt;xs:enumeration value="CM85"/&gt;
       &lt;xs:enumeration value="SC000"/&gt;
@@ -369,7 +373,7 @@ $(document).ready(function(){initNavTree('schema_1_2_gr.html',''); initResizable
   &lt;!-- bitRangeType specifies the bit numbers to be restricted values from 0 - 69 --&gt;
   &lt;xs:simpleType name="bitRangeType"&gt;
     &lt;xs:restriction base="xs:token"&gt;
-      &lt;xs:pattern value="\[([0-4])?[0-9]:([0-4])?[0-9]\]"/&gt;
+      &lt;xs:pattern value="\[([0-6])?[0-9]:([0-6])?[0-9]\]"/&gt;
     &lt;/xs:restriction&gt;
   &lt;/xs:simpleType&gt;
   &lt;!-- writeContraintType specifies how to describe the restriction of the allowed values that can be written to a resource --&gt;
@@ -781,7 +785,8 @@ $(document).ready(function(){initNavTree('schema_1_2_gr.html',''); initResizable
   &lt;/xs:element&gt;
 &lt;/xs:schema&gt;
 
-&lt;!-- END OF FILE --&gt;</pre> </div></div><!-- contents -->
+&lt;!-- END OF FILE --&gt;
+</pre> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
