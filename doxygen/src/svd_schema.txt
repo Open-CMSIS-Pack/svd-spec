@@ -1824,7 +1824,7 @@ A field may define an \em enumeratedValue in order to make the display more intu
         <td>1..1</td>
     </tr>
     <tr  class="choice">
-        <td colspan="4"><em>2. bitRangeOffsetWidthStyle</em></td>
+        <td colspan="4"><em>1. bitRangeLsbMsbStyle</em> </td>
     </tr>
     <tr  class="choice">
         <td align="right">bitOffset</td>
@@ -1836,10 +1836,10 @@ A field may define an \em enumeratedValue in order to make the display more intu
         <td align="right">bitWidth </td>
         <td>Value defining the bit-width of the bitfield within the register. </td>
         <td>scaledNonNegativeInteger</td>
-        <td>1..1 </td>
+        <td>0..1 </td>
     </tr>
     <tr  class="choice">
-        <td colspan="4"><em>1. bitRangeLsbMsbStyle</em> </td>
+        <td colspan="4"><em>2. bitRangeOffsetWidthStyle</em></td>
     </tr>
     <tr  class="choice">
         <td align="right">lsb </td>
@@ -1851,7 +1851,7 @@ A field may define an \em enumeratedValue in order to make the display more intu
         <td align="right">msb </td>
         <td>Value defining the bit position of the most significant bit within the register. </td>
         <td>scaledNonNegativeInteger</td>
-        <td>1..1 </td>
+        <td>1..1</td>
     </tr>
     <tr class="choice" >
         <td colspan="4"><em>3. bitRangePattern</em></td>
@@ -1860,7 +1860,7 @@ A field may define an \em enumeratedValue in order to make the display more intu
         <td align="right">bitRange </td>
         <td>A string in the format: "[<msb>:<lsb>]"</td>
         <td>bitRangeType </td>
-        <td>1..1 </td>
+        <td>0..1 </td>
     </tr>
     <tr>
         <td>\ref elem_access "access"</td>
