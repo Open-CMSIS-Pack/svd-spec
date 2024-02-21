@@ -337,6 +337,7 @@ to configure the priority of an interrupt. It is equipped with the standard Syst
         - \token{CM23}: Arm Cortex-M23
         - \token{CM33}: Arm Cortex-M33
         - \token{CM35P}: Arm Cortex-M35P
+        - \token{CM52}: Arm Cortex-M52
         - \token{CM55}: Arm Cortex-M55
         - \token{CM85}: Arm Cortex-M85
         - \token{SC000}: Arm Secure Core SC000
