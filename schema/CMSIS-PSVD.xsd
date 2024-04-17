@@ -23,6 +23,7 @@
   Version 2.0.0:
   - extract peripheral schema from CMSIS-SVD.xsd to CMSIS-PSVD.xsd
   - add peripheral loadFrom attribute
+  - support conditions
 
   Version 1.3.10:
   - add CM52 as enumerated value for cpuNameType.
@@ -254,6 +255,7 @@
       <xs:element name="description" type="xs:string" minOccurs="0"/>
       <xs:element name="value" type="xs:integer"/>
     </xs:sequence>
+    <xs:attribute name="condition" type="xs:string" use="optional"/>
   </xs:complexType>
 
   <!-- register properties group specifies register size, access permission and reset value
@@ -368,6 +370,7 @@
       </xs:element>
     </xs:sequence>
     <xs:attribute name="derivedFrom" type="dimableIdentifierType" use="optional"/>
+    <xs:attribute name="condition" type="xs:string" use="optional"/>
   </xs:complexType>
 
   <xs:complexType name="fieldsType">
@@ -414,6 +417,7 @@
       <xs:element name="fields" type="fieldsType" minOccurs="0" maxOccurs="1"/>
     </xs:sequence>
     <xs:attribute name="derivedFrom" type="dimableIdentifierType" use="optional"/>
+    <xs:attribute name="condition" type="xs:string" use="optional"/>
   </xs:complexType>
 
   <!-- V1.1: A cluster is a set of registers that are composed into a C data structure in the device header file -->
@@ -498,6 +502,7 @@
     </xs:sequence>
     <xs:attribute name="derivedFrom" type="dimableIdentifierType" use="optional"/>
     <xs:attribute name="loadFrom" type="stringType" use="optional"/>
+    <xs:attribute name="condition" type="xs:string" use="optional"/>
   </xs:complexType>
 
   <!-- ======================================================== -->
