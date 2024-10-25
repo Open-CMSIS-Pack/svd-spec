@@ -1116,7 +1116,7 @@ Note, you can also specify an array of a cluster using the \tagem{dim} element.
         - No relative paths will work.
         <br><b>Remarks:</b> When deriving a cluster, it is mandatory to specify at least
         the \tagem{name}, the \tagem{description}, and the \tagem{addressOffset}.</td>
-    <td>registerType</td>
+    <td>referenceIdentifierType</td>
     <td>0..1</td>
   </tr>
   <tr>
@@ -1353,7 +1353,7 @@ typedef struct {
         - No relative paths will work.
         <br><b>Remarks:</b> When deriving, it is mandatory to specify at least
         the \tagem{name}, the \tagem{description}, and the \tagem{addressOffset}.</td>
-    <td>xs:Name</td>
+    <td>referenceIdentifierType</td>
     <td>0..1</td>
   </tr>
   <tr>
@@ -1764,7 +1764,7 @@ A field may define an \em enumeratedValue in order to make the display more intu
         - No relative paths will work.
         <br><b>Remarks:</b> When deriving, it is mandatory to specify at least
         the \tagem{name} and \tagem{description}.</td>
-    <td>xs:Name</td>
+    <td>referenceIdentifierType</td>
     <td>0..1</td>
   </tr>
   <tr>
@@ -1992,7 +1992,7 @@ can provide reference manual level details within the debugger.
     peripheral + register + field:   timer0.ctrl.clk.dis_en_enum
 </pre>
     </td>
-    <td>xs:Name</td>
+    <td>referenceIdentifierType</td>
     <td>0..1</td>
   </tr>
   <tr>
@@ -2025,9 +2025,9 @@ can provide reference manual level details within the debugger.
   <tr>
     <td>\refelem{enumeratedValue}</td>
     <td>Describes a single entry in the enumeration. The number of required items depends on the
-        bit-width of the associated field.</td>
+        bit-width of the associated field. If derived from a previously defined \em enumeratedValues section, don't specify, else required.</td>
     <td>enumeratedValueType</td>
-    <td>1..*</td>
+    <td>0/1..*</td>
   </tr>
 </table>
 
