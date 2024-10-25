@@ -158,7 +158,7 @@ $(document).ready(function(){initNavTree('elem_registers.html',''); initResizabl
 <li>No relative paths will work. <br  />
 <b>Remarks:</b> When deriving a cluster, it is mandatory to specify at least the <em>&lt;name&gt;</em>, the <em>&lt;description&gt;</em>, and the <em>&lt;addressOffset&gt;</em>. </li>
 </ul>
-</td><td>registerType </td><td>0..1  </td></tr>
+</td><td>referenceIdentifierType </td><td>0..1  </td></tr>
 <tr>
 <th>Child Elements </th><th>Description </th><th>Type </th><th>Occurrence  </th></tr>
 <tr class="group1">
@@ -269,7 +269,7 @@ $(document).ready(function(){initNavTree('elem_registers.html',''); initResizabl
 <li>No relative paths will work. <br  />
 <b>Remarks:</b> When deriving, it is mandatory to specify at least the <em>&lt;name&gt;</em>, the <em>&lt;description&gt;</em>, and the <em>&lt;addressOffset&gt;</em>. </li>
 </ul>
-</td><td>xs:Name </td><td>0..1  </td></tr>
+</td><td>referenceIdentifierType </td><td>0..1  </td></tr>
 <tr>
 <th>Child Elements </th><th>Description </th><th>Type </th><th>Occurrence  </th></tr>
 <tr class="group1">
@@ -478,7 +478,7 @@ Debuggers are not expected to read this register location unless explicitly inst
 <li>No relative paths will work. <br  />
 <b>Remarks:</b> When deriving, it is mandatory to specify at least the <em>&lt;name&gt;</em> and <em>&lt;description&gt;</em>. </li>
 </ul>
-</td><td>xs:Name </td><td>0..1  </td></tr>
+</td><td>referenceIdentifierType </td><td>0..1  </td></tr>
 <tr>
 <th>Child Elements </th><th>Description </th><th>Type </th><th>Occurrence  </th></tr>
 <tr class="group1">
@@ -590,7 +590,7 @@ Debuggers are not expected to read this field location unless explicitly instruc
     field:                           clk.dis_en_enum
     register + field:                ctrl.clk.dis_en_enum
     peripheral + register + field:   timer0.ctrl.clk.dis_en_enum
-</pre>  </td><td>xs:Name </td><td>0..1  </td></tr>
+</pre>  </td><td>referenceIdentifierType </td><td>0..1  </td></tr>
 <tr>
 <th>Child Elements </th><th>Description </th><th>Type </th><th>Occurrence  </th></tr>
 <tr>
@@ -600,7 +600,7 @@ Debuggers are not expected to read this field location unless explicitly instruc
 <tr>
 <td>usage </td><td>Possible values are <span class="XML-Token">read<em>,</em> write<em>, or</em> read-write</span>. This allows specifying two different enumerated values depending whether it is to be used for a read or a write access. If not specified, the default value <span class="XML-Token">read-write</span> is used. </td><td>enumUsageType </td><td>0..1  </td></tr>
 <tr>
-<td><a class="el" href="elem_registers.html#elem_enumeratedValue">enumeratedValue</a> </td><td>Describes a single entry in the enumeration. The number of required items depends on the bit-width of the associated field. </td><td>enumeratedValueType </td><td>1..*  </td></tr>
+<td><a class="el" href="elem_registers.html#elem_enumeratedValue">enumeratedValue</a> </td><td>Describes a single entry in the enumeration. The number of required items depends on the bit-width of the associated field. If derived from a previously defined <em>enumeratedValues</em> section, don't specify, else required. </td><td>enumeratedValueType </td><td>0/1..*  </td></tr>
 </table>
 <p >&#160;</p><hr  />
 <h1><a class="anchor" id="elem_enumeratedValue"></a>
