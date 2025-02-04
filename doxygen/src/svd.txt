@@ -574,6 +574,7 @@ This allows silicon vendors and tool partners to extend the description beyond t
 
 CMSIS-SVD supports the reuse of whole sections of the description. The attribute \em derivedFrom for
 \refelem{peripheral}, \refelem{register}, and \refelem{field} specifies the source of the section to be copied from.
+Note that a section must be specified before it can be referenced. There is no support for forward references.
 Individual tags can be used to redefine specific elements within a copied section.
 
 <b>Array of Elements</b>
