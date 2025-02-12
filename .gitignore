@@ -1,4 +1,4 @@
 doc/html
 *.bak
-doxygen/svd.doxy
+doxygen/svd.dxy
 doxygen/src/history.txt
