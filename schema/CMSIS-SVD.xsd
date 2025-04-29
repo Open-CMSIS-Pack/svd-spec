@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-  Copyright (c) 2013-2024 ARM Limited. All rights reserved.
+  Copyright (c) 2013-2025 ARM Limited. All rights reserved.
 
   SPDX-License-Identifier: Apache-2.0
 
@@ -17,8 +17,11 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 
-  $Date:         25. October 2024
-  $Revision:     1.3.11
+  $Date:         29. April 2025
+  $Revision:     1.3.12
+
+  Version 1.3.12:
+  - add pmuPresent and pmuNumEventCnt elements
 
   Version 1.3.11:
   - add referenceIdentifierType
@@ -392,6 +395,9 @@
       <xs:element name="vendorSystickConfig" type="xs:boolean"/>
       <!-- V1.3: reports the total number of interrupts implemented by the device (optional) -->
       <xs:element name="deviceNumInterrupts" type="scaledNonNegativeInteger" minOccurs="0"/>
+      <!-- V1.3: indicates whether a PMU is present and how many event counter are present -->
+      <xs:element name="pmuPresent" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="pmuNumEventCnt" type="scaledNonNegativeInteger" minOccurs="0"/>
       <!-- V1.3: sauRegions specifies the available number of address regions -->
       <!--       if not specified a value of zero is assumed                  -->
       <xs:element name="sauNumRegions" type="scaledNonNegativeInteger" minOccurs="0"/>
@@ -416,7 +422,7 @@
           <xs:attribute name="protectionWhenDisabled" type="protectionStringType" use="optional" default="s"/>
         </xs:complexType>
       </xs:element>
-     </xs:sequence>
+    </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="enumeratedValueType">
