@@ -25,7 +25,7 @@ jobs:
     name: Generate documentation
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
@@ -86,7 +86,7 @@ jobs:
             gh release edit -n "$DESC"
           fi
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         if: github.event_name == 'release' || github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         with:
           ref: gh-pages
