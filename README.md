@@ -1,3 +1,4 @@
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-green?label=Licence)](https://github.com/Open-CMSIS-Pack/svd-spec/blob/main/LICENSE)
 # Open-CMSIS-SVD Specification
 
 ## Access to Specification
