@@ -378,13 +378,13 @@ to configure the priority of an interrupt. It is equipped with the standard Syst
         <td>mpuPresent </td>
         <td>Indicate whether the processor is equipped with a memory protection unit (MPU). This tag is either set to \token{true} or \token{false}, \token{1} or \token{0}.</td>
         <td>boolean </td>
-        <td>1..1 </td>
+        <td>0..1 </td>
     </tr>
     <tr>
         <td>fpuPresent </td>
         <td>Indicate whether the processor is equipped with a hardware floating point unit (FPU). Cortex-M4, Cortex-M7, Cortex-M33 and Cortex-M35P are the only available Cortex-M processor with an optional FPU. This tag is either set to \token{true} or \token{false}, \token{1} or \token{0}.</td>
         <td>boolean </td>
-        <td>1..1 </td>
+        <td>0..1 </td>
     </tr>
     <tr>
         <td>fpuDP </td>
@@ -401,26 +401,26 @@ to configure the priority of an interrupt. It is equipped with the standard Syst
         <td>0..1 </td>
     </tr>
     <tr>
-        <td>icachePresent</td>
+        <td>icachePresent </td>
         <td>Indicate whether the processor has an instruction cache. Note: only for Cortex-M7-based devices. </td>
         <td>boolean </td>
         <td>0..1 </td>
     </tr>
     <tr>
-        <td>dcachePresent</td>
+        <td>dcachePresent </td>
         <td>Indicate whether the processor has a data cache. Note: only for Cortex-M7-based devices. </td>
         <td>boolean </td>
         <td>0..1 </td>
     </tr>
     <tr>
-        <td>itcmPresent</td>
+        <td>itcmPresent </td>
         <td>Indicate whether the processor has an instruction tightly coupled memory.
             Note: only an option for Cortex-M7-based devices. </td>
         <td>boolean </td>
         <td>0..1 </td>
     </tr>
     <tr>
-        <td>dtcmPresent</td>
+        <td>dtcmPresent </td>
         <td>Indicate whether the processor has a data tightly coupled memory. Note: only for Cortex-M7-based devices. </td>
         <td>boolean </td>
         <td>0..1 </td>
@@ -440,13 +440,13 @@ to configure the priority of an interrupt. It is equipped with the standard Syst
         <td>1..1 </td>
     </tr>
     <tr>
-        <td>vendorSystickConfig</td>
+        <td>vendorSystickConfig </td>
         <td>Indicate whether the processor implements a vendor-specific System Tick Timer. If \token{false}, then the Arm-defined System Tick Timer is available. If \token{true}, then a vendor-specific System Tick Timer must be implemented. This tag is either set to \token{true} or \token{false}, \token{1} or \token{0}.</td>
         <td>boolean </td>
         <td>1..1 </td>
     </tr>
     <tr>
-        <td>deviceNumInterrupts</td>
+        <td>deviceNumInterrupts </td>
         <td>Add \token{1} to the highest interrupt number and specify this number in here. You can start to enumerate interrupts from \token{0}.
             Gaps might exist between interrupts. For example, you have defined interrupts with the numbers \token{1}, \token{2}, and \token{8}.
             Add \token{9 :(8+1)} into this field.</td>
@@ -454,7 +454,7 @@ to configure the priority of an interrupt. It is equipped with the standard Syst
         <td>0..1 </td>
    </tr>
     <tr>
-        <td>sauNumRegions</td>
+        <td>sauNumRegions </td>
         <td>Indicate the amount of regions in the Security Attribution Unit (SAU).
             If the value is greater than zero, then the device has a SAU and the
             number indicates the maximum amount of available address regions.
