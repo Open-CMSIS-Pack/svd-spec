@@ -189,31 +189,31 @@ $(document).ready(function(){initNavTree('elem_cpu.html',''); initResizable(); }
 </ul>
 </td><td>endianType  </td><td>1..1   </td></tr>
 <tr>
-<td>mpuPresent  </td><td>Indicate whether the processor is equipped with a memory protection unit (MPU). This tag is either set to <span class="XML-Token">true</span> or <span class="XML-Token">false</span>, <span class="XML-Token">1</span> or <span class="XML-Token">0</span>. </td><td>boolean  </td><td>1..1   </td></tr>
+<td>mpuPresent  </td><td>Indicate whether the processor is equipped with a memory protection unit (MPU). This tag is either set to <span class="XML-Token">true</span> or <span class="XML-Token">false</span>, <span class="XML-Token">1</span> or <span class="XML-Token">0</span>. </td><td>boolean  </td><td>0..1   </td></tr>
 <tr>
-<td>fpuPresent  </td><td>Indicate whether the processor is equipped with a hardware floating point unit (FPU). Cortex-M4, Cortex-M7, Cortex-M33 and Cortex-M35P are the only available Cortex-M processor with an optional FPU. This tag is either set to <span class="XML-Token">true</span> or <span class="XML-Token">false</span>, <span class="XML-Token">1</span> or <span class="XML-Token">0</span>. </td><td>boolean  </td><td>1..1   </td></tr>
+<td>fpuPresent  </td><td>Indicate whether the processor is equipped with a hardware floating point unit (FPU). Cortex-M4, Cortex-M7, Cortex-M33 and Cortex-M35P are the only available Cortex-M processor with an optional FPU. This tag is either set to <span class="XML-Token">true</span> or <span class="XML-Token">false</span>, <span class="XML-Token">1</span> or <span class="XML-Token">0</span>. </td><td>boolean  </td><td>0..1   </td></tr>
 <tr>
 <td>fpuDP  </td><td>Indicate whether the processor is equipped with a double precision floating point unit. This element is valid only when <em>&lt;fpuPresent&gt;</em> is set to <span class="XML-Token">true</span>. Currently, only Cortex-M7 processors can have a double precision floating point unit. </td><td>boolean </td><td>0..1   </td></tr>
 <tr>
 <td>dspPresent  </td><td>Indicates whether the processor implements the optional SIMD DSP extensions (DSP). Cortex-M33 and Cortex-M35P are the only available Cortex-M processor with an optional DSP extension. For ARMv7M SIMD DSP extensions are a mandatory part of Cortex-M4 and Cortex-M7. This tag is either set to <span class="XML-Token">true</span> or <span class="XML-Token">false</span>, <span class="XML-Token">1</span> or <span class="XML-Token">0</span>.. This element is mandatory for Cortex-M33, Cortex-M35P and future processors with optional SIMD DSP instruction set. </td><td>boolean  </td><td>0..1   </td></tr>
 <tr>
-<td>icachePresent </td><td>Indicate whether the processor has an instruction cache. Note: only for Cortex-M7-based devices.  </td><td>boolean  </td><td>0..1   </td></tr>
+<td>icachePresent  </td><td>Indicate whether the processor has an instruction cache. Note: only for Cortex-M7-based devices.  </td><td>boolean  </td><td>0..1   </td></tr>
 <tr>
-<td>dcachePresent </td><td>Indicate whether the processor has a data cache. Note: only for Cortex-M7-based devices.  </td><td>boolean  </td><td>0..1   </td></tr>
+<td>dcachePresent  </td><td>Indicate whether the processor has a data cache. Note: only for Cortex-M7-based devices.  </td><td>boolean  </td><td>0..1   </td></tr>
 <tr>
-<td>itcmPresent </td><td>Indicate whether the processor has an instruction tightly coupled memory. Note: only an option for Cortex-M7-based devices.  </td><td>boolean  </td><td>0..1   </td></tr>
+<td>itcmPresent  </td><td>Indicate whether the processor has an instruction tightly coupled memory. Note: only an option for Cortex-M7-based devices.  </td><td>boolean  </td><td>0..1   </td></tr>
 <tr>
-<td>dtcmPresent </td><td>Indicate whether the processor has a data tightly coupled memory. Note: only for Cortex-M7-based devices.  </td><td>boolean  </td><td>0..1   </td></tr>
+<td>dtcmPresent  </td><td>Indicate whether the processor has a data tightly coupled memory. Note: only for Cortex-M7-based devices.  </td><td>boolean  </td><td>0..1   </td></tr>
 <tr>
 <td>vtorPresent  </td><td>Indicate whether the Vector Table Offset Register (VTOR) is implemented in Cortex-M0+ based devices. This tag is either set to <span class="XML-Token">true</span> or <span class="XML-Token">false</span>, <span class="XML-Token">1</span> or <span class="XML-Token">0</span>. If not specified, then VTOR is assumed to be present. </td><td>boolean  </td><td>0..1   </td></tr>
 <tr>
 <td>nvicPrioBits  </td><td>Define the number of bits available in the Nested Vectored Interrupt Controller (NVIC) for configuring priority. </td><td>scaledNonNegativeInteger  </td><td>1..1   </td></tr>
 <tr>
-<td>vendorSystickConfig </td><td>Indicate whether the processor implements a vendor-specific System Tick Timer. If <span class="XML-Token">false</span>, then the Arm-defined System Tick Timer is available. If <span class="XML-Token">true</span>, then a vendor-specific System Tick Timer must be implemented. This tag is either set to <span class="XML-Token">true</span> or <span class="XML-Token">false</span>, <span class="XML-Token">1</span> or <span class="XML-Token">0</span>. </td><td>boolean  </td><td>1..1   </td></tr>
+<td>vendorSystickConfig  </td><td>Indicate whether the processor implements a vendor-specific System Tick Timer. If <span class="XML-Token">false</span>, then the Arm-defined System Tick Timer is available. If <span class="XML-Token">true</span>, then a vendor-specific System Tick Timer must be implemented. This tag is either set to <span class="XML-Token">true</span> or <span class="XML-Token">false</span>, <span class="XML-Token">1</span> or <span class="XML-Token">0</span>. </td><td>boolean  </td><td>1..1   </td></tr>
 <tr>
-<td>deviceNumInterrupts </td><td>Add <span class="XML-Token">1</span> to the highest interrupt number and specify this number in here. You can start to enumerate interrupts from <span class="XML-Token">0</span>. Gaps might exist between interrupts. For example, you have defined interrupts with the numbers <span class="XML-Token">1</span>, <span class="XML-Token">2</span>, and <span class="XML-Token">8</span>. Add <span class="XML-Token">9 :(8+1)</span> into this field. </td><td>scaledNonNegativeInteger </td><td>0..1   </td></tr>
+<td>deviceNumInterrupts  </td><td>Add <span class="XML-Token">1</span> to the highest interrupt number and specify this number in here. You can start to enumerate interrupts from <span class="XML-Token">0</span>. Gaps might exist between interrupts. For example, you have defined interrupts with the numbers <span class="XML-Token">1</span>, <span class="XML-Token">2</span>, and <span class="XML-Token">8</span>. Add <span class="XML-Token">9 :(8+1)</span> into this field. </td><td>scaledNonNegativeInteger </td><td>0..1   </td></tr>
 <tr>
-<td>sauNumRegions </td><td>Indicate the amount of regions in the Security Attribution Unit (SAU). If the value is greater than zero, then the device has a SAU and the number indicates the maximum amount of available address regions.  </td><td>scaledNonNegativeInteger  </td><td>0..1   </td></tr>
+<td>sauNumRegions  </td><td>Indicate the amount of regions in the Security Attribution Unit (SAU). If the value is greater than zero, then the device has a SAU and the number indicates the maximum amount of available address regions.  </td><td>scaledNonNegativeInteger  </td><td>0..1   </td></tr>
 <tr>
 <td><a class="el" href="elem_cpu.html#elem_sauRegionsConfig">sauRegionsConfig</a> </td><td>If the Secure Attribution Unit is preconfigured by HW or Firmware, then the settings are described here. </td><td>SauRegionsConfigType </td><td>0..1   </td></tr>
 </table>
