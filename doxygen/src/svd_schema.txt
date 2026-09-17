@@ -402,26 +402,26 @@ to configure the priority of an interrupt. It is equipped with the standard Syst
     </tr>
     <tr>
         <td>icachePresent </td>
-        <td>Indicate whether the processor has an instruction cache. Note: only for Cortex-M7-based devices. </td>
+        <td>Indicate whether the processor has an instruction cache. Note: only relevant for Arm Cortex-M7 and above. </td>
         <td>boolean </td>
         <td>0..1 </td>
     </tr>
     <tr>
         <td>dcachePresent </td>
-        <td>Indicate whether the processor has a data cache. Note: only for Cortex-M7-based devices. </td>
+        <td>Indicate whether the processor has a data cache. Note: only relevant for Arm Cortex-M7 and above. </td>
         <td>boolean </td>
         <td>0..1 </td>
     </tr>
     <tr>
         <td>itcmPresent </td>
         <td>Indicate whether the processor has an instruction tightly coupled memory.
-            Note: only an option for Cortex-M7-based devices. </td>
+            Note: Note: only relevant for Arm Cortex-M7 and above. </td>
         <td>boolean </td>
         <td>0..1 </td>
     </tr>
     <tr>
         <td>dtcmPresent </td>
-        <td>Indicate whether the processor has a data tightly coupled memory. Note: only for Cortex-M7-based devices. </td>
+        <td>Indicate whether the processor has a data tightly coupled memory. Note: only for Arm Cortex-M7 and above. </td>
         <td>boolean </td>
         <td>0..1 </td>
     </tr>
