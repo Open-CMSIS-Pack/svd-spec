@@ -388,40 +388,40 @@ to configure the priority of an interrupt. It is equipped with the standard Syst
     </tr>
     <tr>
         <td>fpuDP </td>
-        <td>Indicate whether the processor is equipped with a double precision floating point unit. This element is valid only when \tagem{fpuPresent} is set to \token{true}. Currently, only Cortex-M7 processors can have a double precision floating point unit.</td>
+        <td>Indicate whether the processor is equipped with a double precision floating point unit. This element is valid only when \tagem{fpuPresent} is set to \token{true}. Cortex-M7 processors and above can have a double precision floating point unit.</td>
         <td>boolean</td>
         <td>0..1 </td>
     </tr>
     <tr>
         <td>dspPresent </td>
         <td>Indicates whether the processor implements the optional SIMD DSP extensions (DSP). Cortex-M33 and Cortex-M35P are the only available Cortex-M processor with an optional DSP extension. For ARMv7M SIMD DSP extensions are
-        a mandatory part of Cortex-M4 and Cortex-M7. This tag is either set to \token{true} or \token{false}, \token{1} or \token{0}.</td>. This element is mandatory for Cortex-M33, Cortex-M35P and future processors with optional
+        a mandatory part of Cortex-M4 and Cortex-M7. This tag is either set to \token{true} or \token{false}, \token{1} or \token{0}.</td>. This element is mandatory for Cortex-M33 processors and higher with optional
         SIMD DSP instruction set.
         <td>boolean </td>
         <td>0..1 </td>
     </tr>
     <tr>
         <td>icachePresent </td>
-        <td>Indicate whether the processor has an instruction cache. Note: only for Cortex-M7-based devices. </td>
+        <td>Indicate whether the processor has an instruction cache. Note: only relevant for Arm Cortex-M7 and above. </td>
         <td>boolean </td>
         <td>0..1 </td>
     </tr>
     <tr>
         <td>dcachePresent </td>
-        <td>Indicate whether the processor has a data cache. Note: only for Cortex-M7-based devices. </td>
+        <td>Indicate whether the processor has a data cache. Note: only relevant for Arm Cortex-M7 and above. </td>
         <td>boolean </td>
         <td>0..1 </td>
     </tr>
     <tr>
         <td>itcmPresent </td>
         <td>Indicate whether the processor has an instruction tightly coupled memory.
-            Note: only an option for Cortex-M7-based devices. </td>
+            Note: Note: only relevant for Arm Cortex-M7 and above. </td>
         <td>boolean </td>
         <td>0..1 </td>
     </tr>
     <tr>
         <td>dtcmPresent </td>
-        <td>Indicate whether the processor has a data tightly coupled memory. Note: only for Cortex-M7-based devices. </td>
+        <td>Indicate whether the processor has a data tightly coupled memory. Note: only for Arm Cortex-M7 and above. </td>
         <td>boolean </td>
         <td>0..1 </td>
     </tr>
