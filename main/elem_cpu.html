@@ -193,17 +193,17 @@ $(document).ready(function(){initNavTree('elem_cpu.html',''); initResizable(); }
 <tr>
 <td>fpuPresent  </td><td>Indicate whether the processor is equipped with a hardware floating point unit (FPU). Cortex-M4, Cortex-M7, Cortex-M33 and Cortex-M35P are the only available Cortex-M processor with an optional FPU. This tag is either set to <span class="XML-Token">true</span> or <span class="XML-Token">false</span>, <span class="XML-Token">1</span> or <span class="XML-Token">0</span>. </td><td>boolean  </td><td>0..1   </td></tr>
 <tr>
-<td>fpuDP  </td><td>Indicate whether the processor is equipped with a double precision floating point unit. This element is valid only when <em>&lt;fpuPresent&gt;</em> is set to <span class="XML-Token">true</span>. Currently, only Cortex-M7 processors can have a double precision floating point unit. </td><td>boolean </td><td>0..1   </td></tr>
+<td>fpuDP  </td><td>Indicate whether the processor is equipped with a double precision floating point unit. This element is valid only when <em>&lt;fpuPresent&gt;</em> is set to <span class="XML-Token">true</span>. Cortex-M7 processors and above can have a double precision floating point unit. </td><td>boolean </td><td>0..1   </td></tr>
 <tr>
-<td>dspPresent  </td><td>Indicates whether the processor implements the optional SIMD DSP extensions (DSP). Cortex-M33 and Cortex-M35P are the only available Cortex-M processor with an optional DSP extension. For ARMv7M SIMD DSP extensions are a mandatory part of Cortex-M4 and Cortex-M7. This tag is either set to <span class="XML-Token">true</span> or <span class="XML-Token">false</span>, <span class="XML-Token">1</span> or <span class="XML-Token">0</span>.. This element is mandatory for Cortex-M33, Cortex-M35P and future processors with optional SIMD DSP instruction set. </td><td>boolean  </td><td>0..1   </td></tr>
+<td>dspPresent  </td><td>Indicates whether the processor implements the optional SIMD DSP extensions (DSP). Cortex-M33 and Cortex-M35P are the only available Cortex-M processor with an optional DSP extension. For ARMv7M SIMD DSP extensions are a mandatory part of Cortex-M4 and Cortex-M7. This tag is either set to <span class="XML-Token">true</span> or <span class="XML-Token">false</span>, <span class="XML-Token">1</span> or <span class="XML-Token">0</span>. This element is mandatory for Cortex-M33 processors and higher with optional SIMD DSP instruction set. </td><td>boolean  </td><td>0..1   </td></tr>
 <tr>
-<td>icachePresent  </td><td>Indicate whether the processor has an instruction cache. Note: only for Cortex-M7-based devices.  </td><td>boolean  </td><td>0..1   </td></tr>
+<td>icachePresent  </td><td>Indicate whether the processor has an instruction cache. Note: only relevant for Arm Cortex-M7 and above.  </td><td>boolean  </td><td>0..1   </td></tr>
 <tr>
-<td>dcachePresent  </td><td>Indicate whether the processor has a data cache. Note: only for Cortex-M7-based devices.  </td><td>boolean  </td><td>0..1   </td></tr>
+<td>dcachePresent  </td><td>Indicate whether the processor has a data cache. Note: only relevant for Arm Cortex-M7 and above.  </td><td>boolean  </td><td>0..1   </td></tr>
 <tr>
-<td>itcmPresent  </td><td>Indicate whether the processor has an instruction tightly coupled memory. Note: only an option for Cortex-M7-based devices.  </td><td>boolean  </td><td>0..1   </td></tr>
+<td>itcmPresent  </td><td>Indicate whether the processor has an instruction tightly coupled memory. Note: Note: only relevant for Arm Cortex-M7 and above.  </td><td>boolean  </td><td>0..1   </td></tr>
 <tr>
-<td>dtcmPresent  </td><td>Indicate whether the processor has a data tightly coupled memory. Note: only for Cortex-M7-based devices.  </td><td>boolean  </td><td>0..1   </td></tr>
+<td>dtcmPresent  </td><td>Indicate whether the processor has a data tightly coupled memory. Note: only for Arm Cortex-M7 and above.  </td><td>boolean  </td><td>0..1   </td></tr>
 <tr>
 <td>vtorPresent  </td><td>Indicate whether the Vector Table Offset Register (VTOR) is implemented in Cortex-M0+ based devices. This tag is either set to <span class="XML-Token">true</span> or <span class="XML-Token">false</span>, <span class="XML-Token">1</span> or <span class="XML-Token">0</span>. If not specified, then VTOR is assumed to be present. </td><td>boolean  </td><td>0..1   </td></tr>
 <tr>
