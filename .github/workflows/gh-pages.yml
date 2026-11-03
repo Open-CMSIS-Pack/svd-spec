@@ -34,11 +34,15 @@ jobs:
         run: |
           git fetch --tags --force
 
+      - name: Setup Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
       - name: Install packages
         run: |
           sudo apt-get update
           sudo apt-get install --no-install-recommends -y p7zip libxml2-utils
-          sudo pip install LinkChecker
+          python -m pip install LinkChecker
 
       - name: Install doxygen 1.9.6
         run: |
