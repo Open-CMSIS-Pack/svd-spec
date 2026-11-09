@@ -121,7 +121,7 @@ $(document).ready(function(){initNavTree('schema_1_2_gr.html',''); initResizable
 <div class="textblock"><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;!--
 
-  Copyright (c) 2013-2025 ARM Limited. All rights reserved.
+  Copyright (c) 2013-2026 Arm Limited. All rights reserved.
 
   SPDX-License-Identifier: Apache-2.0
 
@@ -137,8 +137,11 @@ $(document).ready(function(){initNavTree('schema_1_2_gr.html',''); initResizable
   See the License for the specific language governing permissions and
   limitations under the License.
 
-  $Date:         29. April 2025
-  $Revision:     1.3.12
+  $Date:         05. November 2026
+  $Revision:     1.3.13
+
+  Version 1.3.13:
+  - add Cortex-M42 as enumerated value for cpuNameType.
 
   Version 1.3.12:
   - add pmuPresent and pmuNumEventCnt elements
@@ -236,6 +239,7 @@ $(document).ready(function(){initNavTree('schema_1_2_gr.html',''); initResizable
       &lt;xs:enumeration value="CM23"/&gt;
       &lt;xs:enumeration value="CM33"/&gt;
       &lt;xs:enumeration value="CM35P"/&gt;
+      &lt;xs:enumeration value="CM42"/&gt;
       &lt;xs:enumeration value="CM52"/&gt;
       &lt;xs:enumeration value="CM55"/&gt;
       &lt;xs:enumeration value="CM85"/&gt;
